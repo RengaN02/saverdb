@@ -1,0 +1,24 @@
+{
+  "name": "saver.db",
+  "version": "3.0.4",
+  "description": "Saver Database Modules",
+  "author": {
+    "name": "RengaN"
+  },
+  "main": "main.js",
+  "types": "typescript/main.d.ts",
+
+  "keywords": [
+    "db",
+    "saverdb",
+    "saver.db"
+  ],
+  "license": "Apache-2.0",
+
+  "devDependencies": {
+    "@types/node": "^14.14.33"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}
