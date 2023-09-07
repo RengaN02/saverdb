@@ -57,7 +57,7 @@ npm i saver.db
 
 
 
-# Bugs Report
+# Bug Report
 
 ### RengaN
 
