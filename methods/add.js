@@ -14,7 +14,7 @@ function add(key,value) {
     
     if(isNaN(value)) if(!value) throw error('Value is null!')
     if(typeof value != 'number') throw error('Value is not number!')
-    if(allData[key] == undefined) throw error('(I cantfind that key in database!')
+    if(allData[key] == undefined) throw error('(I cant find that key in database!')
     allData[key] +=value
     yazdir('./database.json', allData)
 
