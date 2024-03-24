@@ -52,5 +52,5 @@ npm i saver.db
 
 
 # Bug Report
-Contact with me from discord rengan
+Contact with rengan from discord 
 
