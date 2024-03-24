@@ -1,16 +1,16 @@
 const fs = require('fs')
 const error = require('./Errors.js')
-var oku = (files) => JSON.parse(fs.readFileSync(files,'utf8'))
-var yazdir = (files,data) => fs.writeFileSync(files,JSON.stringify(data,null,4))
+var read = (files) => JSON.parse(fs.readFileSync(files,'utf8'))
+var write = (files,data) => fs.writeFileSync(files,JSON.stringify(data,null,4))
 if(!fs.existsSync('./database.json')) {
-   yazdir('./database.json', {})
+   write('./database.json', {})
    } 
  function Delete(data) {
-    if(isNaN(data))if(!data) throw error('Neyi silmem gerektigini anlamadım..!')
-    const allData = oku('./database.json')
-    if(!allData[data]) throw error('Böyle bir veri yok ki sileyim..!')
+    if(isNaN(data))if(!data) throw error('What i will delete..!')
+    const allData = read('./database.json')
+    if(!allData[data]) throw error('I cant find that what you want to delete in database.')
     delete allData[data]
-    yazdir('./database.json', allData)
+    write('./database.json', allData)
 
 }
 
