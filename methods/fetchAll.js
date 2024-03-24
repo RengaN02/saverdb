@@ -7,7 +7,7 @@ if(!fs.existsSync('./database.json')) {
   } 
 
 function fetchAll() {
-    return allData = read('./database.json')
+    return read('./database.json')
 }
 
 module.exports = fetchAll
