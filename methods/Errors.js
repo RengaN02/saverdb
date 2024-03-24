@@ -1,5 +1,3 @@
-Error.prototype.name = 'Saver.DB Error'
-  
-const error = par => new Error(par)
+const error = par => new Error(`Saver.db Error: ${par}`)
   
 module.exports = error
