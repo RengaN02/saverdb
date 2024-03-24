@@ -1,21 +1,21 @@
 const fs = require('fs')
 const error = require('./Errors.js')
-var oku = (files) => JSON.parse(fs.readFileSync(files,'utf8'))
-var yazdir = (files,data) => fs.writeFileSync(files,JSON.stringify(data,null,4))
+var read = (files) => JSON.parse(fs.readFileSync(files,'utf8'))
+var write = (files,data) => fs.writeFileSync(files,JSON.stringify(data,null,4))
 
 if(!fs.existsSync('./database.json')) {
-  yazdir('./database.json', {})
+  write('./database.json', {})
   } 
 
 
 
-function add(data,value) {
-    const allData = oku('./database.json')
+function add(key,value) {
+    const allData = read('./database.json')
     
-    if(isNaN(value)) if(!value) throw error('Ekliyeceğim şeyi belirtmelisin..!')
-    if(typeof value != 'number') throw error('Ekliyeceğim şey sayı türünden olmalıdır..!')
-    if(allData[data] == undefined) throw error('Böyle bir işlem yapamam çünkü veri kaydedilmemiş..!')
-    allData[data] +=value
+    if(isNaN(value)) if(!value) throw error('Value is null!')
+    if(typeof value != 'number') throw error('Value is not number!')
+    if(allData[key] == undefined) throw error('(I cant find that key in database!')
+    allData[key] +=value
     yazdir('./database.json', allData)
 
 }

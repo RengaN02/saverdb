@@ -8,7 +8,5 @@ declare module "saver.db" {
     export function fetch(data: any): any;
     export function has(data: any): boolean;
     export function push(data: any, db: any): any;
-    export function divide(data: any, value: any): any;
-    export function extract(data: any, value: any): any; 
-    export function multiply(data: any, value: any): any; 
+    export function extract(data: any, value: any): any;
 }

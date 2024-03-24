@@ -1,11 +1,9 @@
-Saver Database Module And API
+Saver Database Module
 =============================
 ![Downloads](https://img.shields.io/npm/dt/saver.db?color=%230099ff&label=Downloads)
 ![Version](https://img.shields.io/npm/v/saver.db?color=%230099ff&label=Version)
 
-
-
-With this module, you can easily add data to json.
+Basically a database module
 
 #
 
@@ -24,9 +22,7 @@ npm i saver.db
 
   db.set(`UserId`, "368695088718544896"); // ---> Create user data
   db.add(`Usernumber`, 5); // ---> Add user data this value
-  db.divide(`Usernumber`, 5); // ---> Divide user data by this value
   db.extract(`Usernumber`, 5);// ---> Extract this value from user data
-  db.multiply(`Usernumber`, 5); // ---> Multiply user data by this value
   db.delete("UserAvatar"); // ---> Delete user data
   db.push(`User`, `RengaN`); // ---> Push to array
   db.has("User"); // ---> True Or False
@@ -42,9 +38,7 @@ npm i saver.db
 
   db.set(`UserId`, "368695088718544896"); // ---> Create user data
   db.add(`Usernumber`, 5); // ---> Add user data this value
-  db.divide(`Usernumber`, 5); // ---> Divide user data by this value
   db.extract(`Usernumber`, 5);// ---> Extract this value from user data
-  db.multiply(`Usernumber`, 5); // ---> Multiply user data by this value
   db.Delete("UserAvatar"); // ---> Delete user data
   db.push(`User`, `RengaN`); // ---> Push to array
   db.has("User"); // ---> True Or False
@@ -58,8 +52,5 @@ npm i saver.db
 
 
 # Bug Report
-
-### RengaN
-
-[Discord](https://discord.com/users/368695088718544896)
+Contact with rengan from discord 
 
