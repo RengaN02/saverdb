@@ -6,7 +6,6 @@ if(!fs.existsSync('./database.json')) {
   write('./database.json', {})
   } 
 
-
 function push(data,db) {
     const allData = read('./database.json')
 
