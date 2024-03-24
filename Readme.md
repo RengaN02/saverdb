@@ -29,7 +29,7 @@ npm i saver.db
   db.fetch(`User`); // ---> Fetch user data
   db.get(`User`); // ---> Fetch user data
   db.fetchAll(); // ---> Fetch all data
-  db.clear(); // ---> Deletes all data and also creates a backup file.
+  db.clear(); // ---> Deletes all data
 
 ```
 ## Typescript
@@ -45,7 +45,7 @@ npm i saver.db
   db.fetch(`User`); // ---> Fetch user data
   db.get(`User`); // ---> Fetch user data
   db.fetchAll(); // ---> Fetch all data
-  db.clear(); // ---> Deletes all data and also creates a backup file.
+  db.clear(); // ---> Deletes all data
 ```
 #
 
