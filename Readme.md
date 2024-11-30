@@ -1,56 +1,106 @@
-Saver Database Module
-=============================
-![Downloads](https://img.shields.io/npm/dt/saver.db?color=%230099ff&label=Downloads)
-![Version](https://img.shields.io/npm/v/saver.db?color=%230099ff&label=Version)
+# Saver Database Module  
+A lightweight JSON-based database for Node.js projects.  
 
-Basically a database module
+![Downloads](https://img.shields.io/npm/dt/saver.db?color=%230099ff&label=Downloads)  
+![Version](https://img.shields.io/npm/v/saver.db?color=%230099ff&label=Version)  
 
-#
+---
 
-# Installation
+## Installation  
 
-```npm
+```bash
 npm i saver.db
 ```
 
-#
+---
 
-# Examples
-## Javascript
+## Usage Examples  
+
+### JavaScript  
+
 ```javascript
-  const db = require("saver.db");
+const Database = require("saver.db");
 
-  db.set(`UserId`, "368695088718544896"); // ---> Create user data
-  db.add(`Usernumber`, 5); // ---> Add user data this value
-  db.extract(`Usernumber`, 5);// ---> Extract this value from user data
-  db.delete("UserAvatar"); // ---> Delete user data
-  db.push(`User`, `RengaN`); // ---> Push to array
-  db.has("User"); // ---> True Or False
-  db.fetch(`User`); // ---> Fetch user data
-  db.get(`User`); // ---> Fetch user data
-  db.fetchAll(); // ---> Fetch all data
-  db.clear(); // ---> Deletes all data
+// Initialize the database
+const db = new Database('./database.json');
 
+// Set a value
+db.set('UserId', '368695088718544896');
+
+// Add a number to an existing value
+db.add('UserNumber', 5);
+
+// Subtract a number from an existing value
+db.extract('UserNumber', 2);
+
+// Delete a specific key
+db.delete('UserAvatar');
+
+// Push a value to an array
+db.push('UserList', 'John Doe');
+
+// Check if a key exists
+console.log(db.has('UserList')); // true or false
+
+// Fetch a specific value
+console.log(db.fetch('UserList'));
+
+// Fetch all data
+console.log(db.fetchAll());
+
+// Clear the database
+db.clear();
 ```
-## Typescript
+
+---
+
+### TypeScript  
+
 ```typescript
-  import * as db from "saver.db"
+import Database from "saver.db";
 
-  db.set(`UserId`, "368695088718544896"); // ---> Create user data
-  db.add(`Usernumber`, 5); // ---> Add user data this value
-  db.extract(`Usernumber`, 5);// ---> Extract this value from user data
-  db.Delete("UserAvatar"); // ---> Delete user data
-  db.push(`User`, `RengaN`); // ---> Push to array
-  db.has("User"); // ---> True Or False
-  db.fetch(`User`); // ---> Fetch user data
-  db.get(`User`); // ---> Fetch user data
-  db.fetchAll(); // ---> Fetch all data
-  db.clear(); // ---> Deletes all data
+// Initialize the database
+const db = new Database('./database.json');
+
+// Set a value
+db.set('UserId', '368695088718544896');
+
+// Add a number to an existing value
+db.add('UserNumber', 5);
+
+// Subtract a number from an existing value
+db.extract('UserNumber', 2);
+
+// Delete a specific key
+db.delete('UserAvatar');
+
+// Push a value to an array
+db.push('UserList', 'John Doe');
+
+// Check if a key exists
+console.log(db.has('UserList')); // true or false
+
+// Fetch a specific value
+console.log(db.fetch('UserList'));
+
+// Fetch all data
+console.log(db.fetchAll());
+
+// Clear the database
+db.clear();
 ```
-#
 
+---
 
+### Features  
+1. **Lightweight:** Uses a JSON file to store and manage data.  
+2. **Simple API:** Provides methods to create, read, update, and delete data.  
+3. **TypeScript Support:** Fully supports type definitions for better development experience.  
 
-# Bug Report
-Contact with rengan from discord 
+---
 
+### Notes  
+- By default, the database file is created at `./database.json`. To use a custom file path:  
+  ```javascript
+  const db = new Database('./custom/path/database.json');
+  ```  
