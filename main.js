@@ -39,11 +39,11 @@ class Database {
         const allData = this.read()
     
         if(!allData[data]) {
-          throw this.error('I cant find that key in database!')
+            throw this.error('I cant find that key in database!')
         } else if(Array.isArray(allData[data]) == false) {
-          throw this.error('Thats not an array!');
+            throw this.error('Thats not an array!');
         } else if(isNaN(index)){
-          throw this.error('Value is not number!') 
+            throw this.error('Value is not number!') 
         }
         allData[data][index] = db
         this.write(allData)
@@ -72,15 +72,21 @@ class Database {
     }
     find(array, data, value) {
         const allData = this.read()
-        if(Array.isArray(allData[array]) == false) {
-          throw this.error('Thats not an array!');
+        if(!allData[data]) {
+            allData[data] = []
+            this.write(allData)
+        } else if(Array.isArray(allData[data]) == false) {
+            throw this.error('Thats not an array!');
         }
         return allData[array].find(u => u[data] === value);
     }
     findIndex(array, data, value) {
         const allData = this.read()
-        if(Array.isArray(allData[array]) == false) {
-          throw this.error('Thats not an array!');
+        if(!allData[data]) {
+            allData[data] = []
+            this.write(allData)
+        } else if(Array.isArray(allData[data]) == false) {
+            throw this.error('Thats not an array!');
         }
         return allData[array].findIndex(u => u[data] === value);
     }
@@ -93,8 +99,11 @@ class Database {
     length(data) {
         const allData = this.read()
     
-        if(Array.isArray(allData[data]) == false) {
-          throw this.error('Thats not an array!');
+        if(!allData[data]) {
+            allData[data] = []
+            this.write(allData)
+        } else if(Array.isArray(allData[data]) == false) {
+            throw this.error('Thats not an array!');
         }
     
         return allData[data].length
@@ -106,10 +115,10 @@ class Database {
               
         if(!allData[data]) {
             allData[data] = []
-           this.write(allData)
-          } else if(Array.isArray(allData[data]) == false) {
-           throw this.error('Thats not an array!');
-          } else
+            this.write(allData)
+        } else if(Array.isArray(allData[data]) == false) {
+            throw this.error('Thats not an array!');
+        }
     
     
         allData[data].push(db)
