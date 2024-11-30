@@ -10,7 +10,7 @@ class Database {
     }
 
     read() {
-        if(!fs.existsSync(this.file)) this.write(this.file, {})
+        if(!fs.existsSync(this.file)) this.write({})
         return JSON.parse(fs.readFileSync(this.file,'utf8'))
     }
 
@@ -120,7 +120,9 @@ class Database {
         if(!data) throw this.error('Undefined data.!')
         if(isNaN(db)) if(!db) throw this.error('Undefined value!')
         const allData = this.read()
+        console.log(allData)
         allData[data] = db
+        console.log(allData)
         this.write(allData)
     }
 
