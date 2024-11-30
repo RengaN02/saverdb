@@ -4,14 +4,16 @@ class Database {
     constructor(file) {
         this.file = file;
     }
-    read() {
-        if(!fs.existsSync(this.file)) write(this.file, {})
-        return JSON.parse(fs.readFileSync(this.file,'utf8'))
-    }
 
     write(data) {
         fs.writeFileSync(this.file,JSON.stringify(data,null,4))
     }
+
+    read() {
+        if(!fs.existsSync(this.file)) this.write(this.file, {})
+        return JSON.parse(fs.readFileSync(this.file,'utf8'))
+    }
+
     add(key,value) {
         const allData = this.read()
 
